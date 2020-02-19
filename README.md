@@ -1,4 +1,4 @@
-# discordlogin
+# DIscordLogin
 
 An automated Discord token grabber, for use with [gtkcord3](https://github.com/diamondburned/gtkcord3).
 
