@@ -3,7 +3,7 @@
 An automated Discord token grabber, for use with [gtkcord3](https://github.com/diamondburned/gtkcord3).
 
 
-## Why WebkitT?
+## Why Webkit?
 
 Using an actual allows us to solve Captchas normally, without needing JavaScript
 hacks. Requests are done legitimately using the official website.
