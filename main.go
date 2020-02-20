@@ -51,6 +51,6 @@ func receivedToken(wv webview.WebView, token string) {
 	})
 	wv.Exit()
 
-	fmt.Println(token)
+	fmt.Print(token)
 	os.Exit(0)
 }
