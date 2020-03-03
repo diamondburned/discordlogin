@@ -14,7 +14,7 @@ hacks. Requests are done legitimately using the official website.
 
 ```sh
 # This should install to $GOPATH/bin/, or ~/go/bin/
-go get -u github.com/diamondburned/discordlogin
+go get github.com/diamondburned/discordlogin
 
 # Add this to shellrc
 PATH="$GOPATH/bin/:$PATH"
