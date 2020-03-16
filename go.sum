@@ -1,2 +1,4 @@
 github.com/zserge/webview v0.0.0-20200121135717-9c1b0a888aa4 h1:UjGpx0KjJegeVC/TZEL/dSCTUXajewpIA1NTF8snadg=
 github.com/zserge/webview v0.0.0-20200121135717-9c1b0a888aa4/go.mod h1:a1CV8KR4Dd1eP2g+mEijGOp+HKczwdKHWyx0aPHKvo4=
+github.com/zserge/webview v0.0.0-20200307090906-10ddbc570a0b h1:WZQb3fh/zx2/CIB1u9CCesCAm6gdyLl3aCjyuXmCbAk=
+github.com/zserge/webview v0.0.0-20200307090906-10ddbc570a0b/go.mod h1:qxc/5N3SOFrs3q+EAVHqaJ1oLbm+hHlDhfhRYg8x7wQ=

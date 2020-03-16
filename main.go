@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"os"
 
 	"github.com/zserge/webview"
 )
@@ -16,7 +14,7 @@ const JavaScript = `
 
 	XMLHttpRequest.prototype.setRequestHeader = function() {
 		if (isAuth(arguments[0], arguments[1])) {
-			window.external.invoke(arguments[1])
+			receivedToken(arguments[1])
 			window.location = ""
 			return
 		}
@@ -26,31 +24,24 @@ const JavaScript = `
 `
 
 func main() {
-	wv := webview.New(webview.Settings{
-		Title:     "Discord Login",
-		URL:       "https://discordapp.com/login",
-		Width:     1000,
-		Height:    800,
-		Resizable: true,
+	wv := webview.New(false)
+	wv.SetSize(1000, 800, webview.HintNone)
+	wv.SetTitle("Discord Login")
+	wv.Navigate("https://discordapp.com/login")
+	wv.Init(JavaScript)
 
-		ExternalInvokeCallback: receivedToken,
+	err := wv.Bind("receivedToken", func(token string) {
+		fmt.Print(token)
+
+		wv.Dispatch(func() {
+			wv.Terminate()
+			wv.Destroy()
+		})
 	})
 
-	wv.Dispatch(func() {
-		if err := wv.Eval(JavaScript); err != nil {
-			log.Fatalln("Failed to evaluate JavaScript:", err)
-		}
-	})
+	if err != nil {
+		panic(err)
+	}
 
 	wv.Run()
-}
-
-func receivedToken(wv webview.WebView, token string) {
-	wv.Dispatch(func() {
-		wv.Terminate()
-	})
-	wv.Exit()
-
-	fmt.Print(token)
-	os.Exit(0)
 }
