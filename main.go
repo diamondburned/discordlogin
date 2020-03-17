@@ -7,6 +7,9 @@ import (
 )
 
 const JavaScript = `
+	// Clear local storage
+	localStorage.clear()
+
 	let setRequestHeader = XMLHttpRequest.prototype.setRequestHeader
 	let isAuth = (key, value) => {
 		return key == "Authorization" && value && !value.startsWith("Bearer")
@@ -35,7 +38,6 @@ func main() {
 
 		wv.Dispatch(func() {
 			wv.Terminate()
-			wv.Destroy()
 		})
 	})
 
