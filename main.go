@@ -30,7 +30,7 @@ func main() {
 	wv := webview.New(false)
 	wv.SetSize(1000, 800, webview.HintNone)
 	wv.SetTitle("Discord Login")
-	wv.Navigate("https://discordapp.com/login")
+	wv.Navigate("https://discord.com/login")
 	wv.Init(JavaScript)
 
 	err := wv.Bind("receivedToken", func(token string) {
